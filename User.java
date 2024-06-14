@@ -15,21 +15,19 @@ public class User {
     }
 
     public boolean login(String inputPassword) {
-
+        return this.password.equals(inputPassword);
     }
 
     public void deleteAccount(Bank bank) {
-
-
+        bank.removeUser(this);
     }
 
     public void addAccount(Account account) {
-
-
+        accounts.add(account);
     }
 
     public Account getAccount() {
-
+        return accounts.isEmpty() ? null : accounts.get(0);
     }
 
     public String getUserID() {
