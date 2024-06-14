@@ -12,11 +12,17 @@ public class Password {
     }
 
     public void changePassword(Bank bank) {
-
+        User user = bank.findUserByID(userID);
+        if (user != null && user.login(oldPassword)) {
+            user.setPassword(newPassword);
+        }
     }
 
     public void findPassword(Bank bank) {
-
+        User user = bank.findUserByID(userID);
+        if (user != null && user.getPhoneNumber().equals(phoneNumber)) {
+            System.out.println("비밀번호는 " + user.getPassword() + "입니다.");
+        }
     }
 
     public String getUserID() {
