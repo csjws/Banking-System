@@ -10,10 +10,13 @@ public class Membership {
     }
 
     public void execute(Bank bank) {
-
+        User newUser = new User(userID, password, phoneNumber);
+        Account newAccount = new Account(userID, 0.0); // 계좌번호를 userID로 설정
+        newUser.addAccount(newAccount);
+        bank.addUser(newUser);
+        bank.addAccount(newAccount);
     }
 
-    // Getters and Setters
     public String getUserID() {
         return userID;
     }
