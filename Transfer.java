@@ -5,13 +5,15 @@ public class Transfer {
     private double amount;
     private String targetAccount;
 
+
     public Transfer(String sourceAccount, String targetAccount, double amount) {
+        this.amount = amount;
+        this.targetAccount = targetAccount;
     }
 
     public void execute(Account sourceAccount, Account targetAccount, double amount) {
-
+        sourceAccount.transfer(targetAccount, amount);
     }
-
 
     public String getTransferID() {
         return transferID;
